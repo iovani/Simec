@@ -29,14 +29,14 @@ public class Log4jInitServlet {
             
             loggerSIMEC.setLevel(Level.INFO);
 
-            PatternLayout layoutAUDITORIA = new PatternLayout("%d %p %C.%M - %m%n");
+            PatternLayout layoutSIMEC = new PatternLayout("%d %p %C.%M - %m%n");
 
-            RollingFileAppender apenderSIECOG = new RollingFileAppender(layoutAUDITORIA, "C:/Users/ybautistap/Documents/SIMEC.log");
+            RollingFileAppender apenderSIMEC = new RollingFileAppender(layoutSIMEC, "C:/Users/ybautistap/Documents/SIMEC.log");
 
-            apenderSIECOG.setMaxFileSize("20000KB");
-            apenderSIECOG.setMaxBackupIndex(10);
+            apenderSIMEC.setMaxFileSize("20000KB");
+            apenderSIMEC.setMaxBackupIndex(10);
 
-            loggerSIMEC.addAppender(apenderSIECOG);
+            loggerSIMEC.addAppender(apenderSIMEC);
             loggerSIMEC.setAdditivity(false);
 
             loggerSIMEC.info("Cargando Archivo de Propiedades: " + "SIMEC.log");
