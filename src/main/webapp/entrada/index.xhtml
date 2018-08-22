@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Secretaria de finanzas del estado de oaxaca</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>   
+        <h:outputStylesheet name="./css/index.css"/>
+    </h:head>    
+    <h:body>
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+        <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+            <p:graphicImage name="./images/ajaxloadingbar.gif" />
+        </p:dialog>
+        <div class="login-page">
+            <div class="form">       
+                <h:graphicImage library="images" name="logo_finanzas.png" class="logo"/>
+                <h:form class="login-form" id="form">
+                    <p:messages id="msgs" /> 
+                    <h:panelGrid columns="1" id="gridLoguin">
+                        <h:outputLabel value="#{loguinController.mensaje.descripcion}" style="color: #B4886B;font-weight: bold;display: block;"/>
+                        <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                        <p:inputText id="Clave"  placeholder="Clave" value="#{loguinController.accesobean.claveusuario}" maxlength="15" autocomplete="false"  required="true">
+                            <f:validateLength maximum="15"/>
+                        </p:inputText>    
+                        <p:password id="Password" value="#{loguinController.accesobean.password}" placeholder="Password" autocomplete="false" required="true"/>
+                    </h:panelGrid> 
+
+                    <br/>
+                    <p:commandButton value="Iniciar" action="#{loguinController.accesosistemaControlador()}" update="gridLoguin" ajax="true"/>                        
+                </h:form>
+            </div>
+        </div>
+   
+    </h:body>
+</html>
+
