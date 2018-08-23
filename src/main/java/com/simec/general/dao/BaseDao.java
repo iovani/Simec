@@ -12,6 +12,6 @@ import org.apache.log4j.Logger;
  */
 public class BaseDao {
     
-     protected final Logger loggerSIMEC = Logger.getLogger("SIMEC");
+     protected final Logger loggerSIMEC = Logger.getLogger(BaseDao.class);
     
 }
