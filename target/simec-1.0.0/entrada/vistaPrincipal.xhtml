@@ -6,10 +6,24 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-    
+        <ui:insert name="header" >
+            <ui:include src="/plantillas/plantillaHead.xhtml" />
+        </ui:insert>
     </h:head>         
     <h:body>          
-        <h:inputText value="Bienvenido" />   
+        <ui:insert name="header" >  
+            <ui:include src="/plantillas/plantillaMenu.xhtml" />
+        </ui:insert>    
+
+        <ui:insert name="expi" >
+            <ui:include src="/plantillas/plantillaSesionExpirada.xhtml" />
+        </ui:insert>
+
+        <h:panelGroup id="modulos">
+            <h:panelGroup id="modulos2" rendered="#{menuController.menubean.menu eq true}">
+                <ui:include  src="#{menuController.menubean.redirige}" />
+            </h:panelGroup>
+        </h:panelGroup>     
 
 
     </h:body>

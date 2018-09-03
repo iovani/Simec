@@ -4,7 +4,7 @@
   <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/auditoria?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/simec?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">4uditor1A?</property>  
         
